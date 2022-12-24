@@ -18,11 +18,7 @@ const HomePage = ({ posts }: HomePageProps) => {
           {posts.map((post) => (
             <PostCard
               key={post.attributes.slug}
-              cover={
-                post.attributes.cover.data.attributes.formats?.thumbnail.url ||
-                post.attributes.cover.data.attributes?.url ||
-                post.attributes.title
-              }
+              cover={post.attributes.cover.data.attributes.url}
               slug={post.attributes.slug}
               title={post.attributes.title}
             />
