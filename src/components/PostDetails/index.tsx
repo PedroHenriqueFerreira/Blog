@@ -1,7 +1,7 @@
 import Date from '../Date';
 import { Container } from './styled';
 
-type PostDetailsProps = {
+export type PostDetailsProps = {
   author: string;
   date: string;
   category: string;

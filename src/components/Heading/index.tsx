@@ -1,6 +1,6 @@
 import { Container } from './styled';
 
-type HeadingProps = {
+export type HeadingProps = {
   children: React.ReactNode;
 };
 

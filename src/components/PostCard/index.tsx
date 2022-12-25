@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Container, PostCardCover, PostCardHeading } from './styled';
 
-type PostCardProps = {
+export type PostCardProps = {
   slug: string;
   title: string;
   cover: string;

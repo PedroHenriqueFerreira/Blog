@@ -4,7 +4,7 @@ import { getAllPosts } from '../../data/posts/get-all-posts';
 import { getPost } from '../../data/posts/get-post';
 import { PostData } from '../../domain/posts/post';
 
-type DynamicPostProps = {
+export type DynamicPostProps = {
   post: PostData;
 };
 

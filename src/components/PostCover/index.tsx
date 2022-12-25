@@ -1,6 +1,6 @@
 import { Container } from './styled';
 
-type PostCoverProps = {
+export type PostCoverProps = {
   url: string;
   alt: string;
 };

@@ -1,7 +1,7 @@
 import { formatDate } from '../../utils/format-date';
 import { Container } from './styled';
 
-type DateProps = {
+export type DateProps = {
   date: string;
 };
 

@@ -1,6 +1,6 @@
 import { Container } from './styled';
 
-type PostContainerProps = {
+export type PostContainerProps = {
   content: string;
 };
 
