@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Comments from '../../components/Comments';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -14,6 +15,9 @@ export type PropProps = {
 
 export const Post = ({ post }: PropProps) => (
   <>
+    <Head>
+      <title>{post.attributes.title}</title>
+    </Head>
     <Header />
     <MainContainer>
       <Heading>{post.attributes.title}</Heading>
