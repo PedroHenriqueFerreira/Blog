@@ -1,2 +1,2 @@
 import '@testing-library/jest-dom';
-import 'jest-styled'
+import 'jest-styled-components';
