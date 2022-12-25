@@ -16,7 +16,7 @@ const HomePage = ({ posts, category }: HomePageProps) => {
   return (
     <>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME}${category ? ` - ${category}` : ''}`}</title>
       </Head>
       <Header />
       {category && <Category>Categoria: {category}</Category>}

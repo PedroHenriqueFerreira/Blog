@@ -8,8 +8,10 @@ export const getPost = async (
 ): Promise<{ data: PostData[] }> => {
   const slugString = Array.isArray(slug) ? slug[0] : slug;
 
-  const url = `${POSTS_URL}&slug=${slugString}`;
+  const url = `${POSTS_URL}&[filters][slug][$eq]=${slugString}`;
   const jsonPosts = await fetchJson<{ data: PostData[] }>(url);
+
+  if (!jsonPosts.data.length) return jsonPosts;
 
   const content = await markdownToHtml(jsonPosts.data[0].attributes.content);
 
