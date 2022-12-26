@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
+import Pagination from '../../components/Pagination';
 import { PostCard } from '../../components/PostCard';
 import { SITE_NAME } from '../../config/app-config';
 import { PaginationData } from '../../domain/posts/pagination';
@@ -14,7 +15,7 @@ export type HomePageProps = {
   pagination?: PaginationData;
 };
 
-const HomePage = ({ posts, category }: HomePageProps) => {
+const HomePage = ({ posts, category, pagination }: HomePageProps) => {
   return (
     <>
       <Head>
@@ -33,6 +34,7 @@ const HomePage = ({ posts, category }: HomePageProps) => {
             />
           ))}
         </Container>
+        {pagination && <Pagination {...pagination} />}
       </MainContainer>
       <Footer />
     </>

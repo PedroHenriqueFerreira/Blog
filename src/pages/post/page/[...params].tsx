@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const urlQuery = `sort=id:desc&pagination[limit]=${postsPerPage}&pagination[start]=${startFrom}${categoryQuery}`;
 
   const { data } = await getAllPosts(urlQuery);
-  const allPosts = await getAllPosts(urlQuery);
+  const allPosts = await getAllPosts();
 
   const pagination: PaginationData = {
     nextPage,
