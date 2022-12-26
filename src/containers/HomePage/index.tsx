@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
@@ -7,7 +8,7 @@ import { PostCard } from '../../components/PostCard';
 import { SITE_NAME } from '../../config/app-config';
 import { PaginationData } from '../../domain/posts/pagination';
 import { PostData } from '../../domain/posts/post';
-import { Category, Container } from './styled';
+import { AllPostsLinks, Category, Container } from './styled';
 
 export type HomePageProps = {
   posts: PostData[];
@@ -21,7 +22,7 @@ const HomePage = ({ posts, category, pagination }: HomePageProps) => {
       <Head>
         <title>
           {`${SITE_NAME}${category ? ` - ${category}` : ''}`}
-          {pagination?.nextPage && ` - pagina ${pagination.nextPage - 1}`}
+          {pagination?.nextPage && ` - Página ${pagination.nextPage - 1}`}
         </title>
       </Head>
       <Header />
@@ -38,6 +39,13 @@ const HomePage = ({ posts, category, pagination }: HomePageProps) => {
           ))}
         </Container>
         {pagination && <Pagination {...pagination} />}
+        {!pagination?.nextPage && (
+          <AllPostsLinks>
+            <Link href="/post/page/1" passHref>
+              Ver todos os posts
+            </Link>
+          </AllPostsLinks>
+        )}
       </MainContainer>
       <Footer />
     </>
