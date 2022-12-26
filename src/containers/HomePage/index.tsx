@@ -19,7 +19,10 @@ const HomePage = ({ posts, category, pagination }: HomePageProps) => {
   return (
     <>
       <Head>
-        <title>{`${SITE_NAME}${category ? ` - ${category}` : ''}`}</title>
+        <title>
+          {`${SITE_NAME}${category ? ` - ${category}` : ''}`}
+          {pagination?.nextPage && ` - pagina ${pagination.nextPage - 1}`}
+        </title>
       </Head>
       <Header />
       {category && <Category>Categoria: {category}</Category>}
